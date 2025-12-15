@@ -144,10 +144,35 @@
                                     <p class="text-sm text-gray-600">속도, 주행거리(TRIP/ODO), 배터리 잔량을 확인할 수 있습니다.</p>
                                 </div>
                             </li>
+                            <li class="flex items-start gap-3">
+                                <div class="bg-blue-100 text-blue-600 rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 mt-0.5 text-xs font-bold">4</div>
+                                <div>
+                                    <span class="font-bold block text-gray-900 text-sm md:text-base">주행 방법 및 주의사항</span>
+                                    <div class="text-sm text-gray-600 space-y-2 mt-1">
+                                        <div class="flex items-start">
+                                            <span class="bg-gray-200 text-gray-700 text-xs px-1.5 py-0.5 rounded font-bold mr-2 whitespace-nowrap mt-0.5">작동</span>
+                                            <span><strong>스로틀 방식:</strong> 우측 핸들 안쪽 레버를 당기면 페달링 없이 모터의 힘으로 주행합니다.</span>
+                                        </div>
+                                        <div class="flex items-start">
+                                            <span class="bg-blue-100 text-blue-700 text-xs px-1.5 py-0.5 rounded font-bold mr-2 whitespace-nowrap mt-0.5">속도</span>
+                                            <span>최대 속도는 안전을 위해 <strong>25km/h</strong>로 제한되어 있습니다.</span>
+                                        </div>
+                                        <div class="bg-red-50 p-3 rounded-lg text-xs text-red-700 mt-2 border border-red-100">
+                                            <strong><i class="fa-solid fa-triangle-exclamation"></i> 안전 라이딩 필수 수칙</strong>
+                                            <ul class="list-disc list-inside mt-1 space-y-1">
+                                                <li><strong>안전 출발:</strong> 초기에는 <span class="underline decoration-red-400 font-bold">페달을 밟아 속도를 낸 상태에서</span> 스로틀을 당겨주세요.</li>
+                                                <li><strong>급출발 주의:</strong> 정차 중 무심코 스로틀을 당기지 않도록 주의하세요.</li>
+                                                <li><strong>제동 요령:</strong> 브레이크는 양쪽을 동시에 부드럽게 잡아주세요.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
                         </ul>
                     </div>
                     <div class="order-1 lg:order-2">
                         <div class="img-container h-64">
+                            <!-- 수정: bike4.jpeg 사용 (작동법) -->
                             <img src="./bike4.jpeg" alt="자전거 계기판 작동법" onerror="this.style.display='none'; this.parentElement.innerText='이미지 준비중'">
                         </div>
                         <p class="text-xs text-center text-gray-400 mt-2">▲ 핸들 좌측 컨트롤러와 디스플레이</p>
@@ -166,6 +191,7 @@
                  <div class="flex flex-col lg:flex-row gap-6 items-center">
                     <div class="w-full lg:w-1/2">
                         <div class="img-container">
+                            <!-- 수정: bike5.jpeg 사용 (안전장비) -->
                             <img src="./bike5.jpeg" alt="발목 밴드 위치" onerror="this.style.display='none'; this.parentElement.innerText='이미지 준비중'">
                         </div>
                     </div>
@@ -194,6 +220,7 @@
                 <div class="flex flex-col lg:flex-row-reverse gap-6">
                      <div class="w-full lg:w-1/2">
                         <div class="img-container">
+                             <!-- 수정: bike3.jpeg 사용 (충전) -->
                              <img src="./bike3.jpeg" alt="충전 중인 모습" onerror="this.style.display='none'; this.parentElement.innerText='이미지 준비중'">
                         </div>
                     </div>
@@ -202,16 +229,20 @@
                             <h3 class="font-bold text-gray-900 flex items-center gap-2 text-sm md:text-base">
                                 <i class="fa-solid fa-plug text-red-500"></i> 충전 필수
                             </h3>
-                            <p class="text-sm text-gray-600 mt-1">
-                                다음 사용자를 위해 반납 시 반드시 <strong>충전 케이블을 연결</strong>해주세요.
-                            </p>
+                            <div class="text-sm text-gray-600 mt-1 space-y-2">
+                                <p>다음 사용자를 위해 반납 시 반드시 <strong>충전 케이블을 연결</strong>해주세요.</p>
+                                <div class="bg-red-50 border border-red-100 rounded p-2 text-xs text-red-700">
+                                    <strong><i class="fa-regular fa-lightbulb"></i> 확인 방법:</strong><br>
+                                    자전거 본체에는 불이 들어오지 않습니다. 연결된 <strong>어댑터에 <span class="text-red-600 font-bold">붉은색 불</span></strong>이 들어오면 정상입니다.
+                                </div>
+                            </div>
                         </div>
                          <div class="bg-gray-50 p-4 rounded-lg">
                             <h4 class="font-bold text-sm mb-2">반납 체크리스트</h4>
                             <ul class="text-sm text-gray-600 space-y-2">
                                 <li class="flex items-center"><i class="fa-regular fa-square-check mr-2 text-gray-400"></i> 지정된 위치(PLUG IN 구역) 주차</li>
                                 <li class="flex items-center"><i class="fa-regular fa-square-check mr-2 text-gray-400"></i> 전원 OFF 확인</li>
-                                <li class="flex items-center"><i class="fa-regular fa-square-check mr-2 text-gray-400"></i> 충전기 연결 확인</li>
+                                <li class="flex items-center"><i class="fa-regular fa-square-check mr-2 text-gray-400"></i> 충전기 연결 (어댑터 불 확인)</li>
                                 <li class="flex items-center"><i class="fa-regular fa-square-check mr-2 text-gray-400"></i> 발목 밴드 제자리 거치</li>
                             </ul>
                         </div>
