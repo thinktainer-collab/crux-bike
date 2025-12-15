@@ -43,6 +43,8 @@
             height: auto;
             object-fit: cover;
             display: block;
+            z-index: 10; /* 이미지를 위로 올림 */
+            position: relative;
         }
 
         .img-placeholder {
@@ -59,13 +61,13 @@
             color: #6b7280;
             padding: 1rem;
             text-align: center;
-            z-index: 0;
+            z-index: 1; /* 이미지가 없을 때만 뒤에서 보임 */
         }
     </style>
 </head>
 <body>
 
-    <!-- 네비게이션 바: 너비 제한 제거 (w-full) -->
+    <!-- 네비게이션 바 -->
     <nav class="bg-yellow-400 text-gray-900 sticky top-0 z-50 shadow-md w-full">
         <div class="w-full px-4 py-3 flex justify-between items-center">
             <div class="font-bold text-lg flex items-center gap-2">
@@ -76,7 +78,7 @@
         </div>
     </nav>
 
-    <!-- 메인 컨텐츠: 너비 제한 제거 (w-full) -->
+    <!-- 메인 컨텐츠 -->
     <main class="w-full px-4 py-6 space-y-6">
 
         <!-- 헤더 섹션 -->
@@ -105,10 +107,11 @@
                         지하 주차장 내 <strong>노란색 기둥</strong>이 있는 <span class="bg-yellow-100 px-1 rounded font-bold">'C' 구역 자전거 주차장</span>을 찾아주세요.
                     </p>
                     <div class="img-container">
-                        <img src="./bike1.jpeg" alt="자전거 주차장 입구" onerror="this.style.opacity='0'">
+                        <!-- 수정: 절대 경로 URL 및 .jpg 사용 -->
+                        <img src="https://thinktainer-collab.github.io/crux-bike/bike1.jpg" alt="자전거 주차장 입구" onerror="this.style.opacity='0'">
                         <div class="img-placeholder">
                             <i class="fa-regular fa-image text-3xl mb-2"></i>
-                            <span><img src ='./bike1.jpeg'></span>
+                            <span class="text-sm mt-2">이미지 로딩 실패<br>(파일명: bike1.jpg 확인 필요)</span>
                         </div>
                     </div>
                 </div>
@@ -122,10 +125,10 @@
                         <strong>B2 엘리베이터</strong> 근처, 벽면에 <strong>"PLUG IN"</strong> 사인이 있는 곳에 거치되어 있습니다.
                     </p>
                     <div class="img-container">
-                        <img src="./bike2.jpeg" alt="자전거 상세 위치" onerror="this.style.opacity='0'">
+                        <img src="https://thinktainer-collab.github.io/crux-bike/bike2.jpg" alt="자전거 상세 위치" onerror="this.style.opacity='0'">
                         <div class="img-placeholder">
                             <i class="fa-regular fa-image text-3xl mb-2"></i>
-                             <span><img src ='./bike2.jpeg'></span>
+                             <span class="text-sm mt-2">이미지 로딩 실패<br>(파일명: bike2.jpg 확인 필요)</span>
                         </div>
                     </div>
                 </div>
@@ -173,10 +176,10 @@
                     </div>
                     <div class="order-1 lg:order-2">
                         <div class="img-container h-64">
-                            <img src="./bike3.jpeg" alt="자전거 계기판 작동법" onerror="this.style.opacity='0'">
+                            <img src="https://thinktainer-collab.github.io/crux-bike/bike3.jpg" alt="자전거 계기판 작동법" onerror="this.style.opacity='0'">
                             <div class="img-placeholder">
                                 <i class="fa-regular fa-image text-3xl mb-2"></i>
-                                <span><img src ='./bike3.jpeg'></span>
+                                <span class="text-sm mt-2">이미지 로딩 실패<br>(파일명: bike3.jpg 확인 필요)</span>
                             </div>
                         </div>
                         <p class="text-xs text-center text-gray-400 mt-2">▲ 핸들 좌측 컨트롤러와 디스플레이</p>
@@ -195,10 +198,10 @@
                  <div class="flex flex-col lg:flex-row gap-6 items-center">
                     <div class="w-full lg:w-1/2">
                         <div class="img-container">
-                            <img src="./bike4.jpeg" alt="발목 밴드 위치" onerror="this.style.opacity='0'">
+                            <img src="https://thinktainer-collab.github.io/crux-bike/bike4.jpg" alt="발목 밴드 위치" onerror="this.style.opacity='0'">
                              <div class="img-placeholder">
                                 <i class="fa-regular fa-image text-3xl mb-2"></i>
-                                <span><img src ='./bike4.jpeg'></span>
+                                <span class="text-sm mt-2">이미지 로딩 실패<br>(파일명: bike4.jpg 확인 필요)</span>
                             </div>
                         </div>
                     </div>
@@ -227,10 +230,10 @@
                 <div class="flex flex-col lg:flex-row-reverse gap-6">
                      <div class="w-full lg:w-1/2">
                         <div class="img-container">
-                             <img src="./bike5.jpeg" alt="충전 중인 모습" onerror="this.style.opacity='0'">
+                             <img src="https://thinktainer-collab.github.io/crux-bike/bike5.jpg" alt="충전 중인 모습" onerror="this.style.opacity='0'">
                              <div class="img-placeholder">
                                 <i class="fa-regular fa-image text-3xl mb-2"></i>
-                                <span><img src ='./bike5.jpeg'></span>
+                                <span class="text-sm mt-2">이미지 로딩 실패<br>(파일명: bike5.jpg 확인 필요)</span>
                             </div>
                         </div>
                     </div>
@@ -271,7 +274,7 @@
 
             images.forEach(img => {
                 img.addEventListener('error', () => {
-                    img.style.opacity = '0';
+                    img.style.opacity = '0'; // 이미지 로드 실패 시 투명 처리 -> 뒤에 있는 placeholder 보임
                 });
                 
                 if(img.complete && img.naturalHeight !== 0) {
